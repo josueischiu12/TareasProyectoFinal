@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Páginas{% endblock %}
+{% block content %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% include 'menu.html' %}
+<main role="main">
+  <div class="container mb-4">
+    {% for tar in object_list %}
+      <div class="row mt-3">
+        <div class="col-md-9 mx-auto">
+          <h2 class="mb-4">{{tar.titulo}}</h2>
+          <div>
+            <p><b>Responsable: </b>{{tar.responsable}}</p>
+            <p><b>Fecha/Hora de entrega: </b>{{tar.fecha_final}} hrs.</p>
+            <p><a href="{% url 'tareas:detalle' tar.id %}">Leer más</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</main>
+{% bootstrap_javascript jquery='full' %}
+{% endblock %}

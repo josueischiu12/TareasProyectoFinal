@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Inicio{% endblock %}
+{% block content %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% include 'menu.html' %}
+<div class="container">
+  <div style="padding-top:50px; text-align:center;">
+    <h1>Proyecto de Programacion Comercial</h1>
+    <p class="lead">Asignacion de Tareas - Python, Django y Vue</p>
+  </div>
+</div>
+{% bootstrap_javascript jquery='full' %}
+{% endblock %}
